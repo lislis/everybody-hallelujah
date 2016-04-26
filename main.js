@@ -65,11 +65,15 @@ document.body.onclick = function() {
   console.log('rec started');
 }
 
-utter.onend = function() {
+var onEnd = function() {
   random =  Math.floor(Math.random() * lyrics.length);
   utter = new SpeechSynthesisUtterance(lyrics[random]);
+  utter.onend = onEnd;
   synth.speak(utter);
 }
+
+utter.onend = onEnd;
+chorus.onend = onEnd;
 
 rec.onresult = function(event) {
 
