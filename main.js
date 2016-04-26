@@ -65,6 +65,12 @@ document.body.onclick = function() {
   console.log('rec started');
 }
 
+utter.onend = function() {
+  random =  Math.floor(Math.random() * lyrics.length);
+  utter = new SpeechSynthesisUtterance(lyrics[random]);
+  synth.speak(utter);
+}
+
 rec.onresult = function(event) {
 
   console.log('TRANSCRIPT: ' + event.results[0][0].transcript);
