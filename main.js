@@ -56,7 +56,7 @@ var output = document.getElementById('output');
 var result;
 
 var synth = window.speechSynthesis;
-var random Math.floor(Math.random() * lyrics.length);
+var random =  Math.floor(Math.random() * lyrics.length);
 var utter = new SpeechSynthesisUtterance(lyrics[random]);
 var chorus = new SpeechSynthesisUtterance(hallelujah);
 
